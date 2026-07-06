@@ -17,7 +17,6 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    project: ['./tsconfig.json'],
   },
   plugins: [
     'react',
@@ -36,7 +35,6 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
-    'prettier',
   ],
   settings: {
     react: {
@@ -103,12 +101,13 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     // Accessibility
     'jsx-a11y/anchor-is-valid': 'warn',
-    // Formatting handled by Prettier
-    'prettier/prettier': 'error',
   },
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
+      parserOptions: {
+        project: ['./tsconfig.json'],
+      },
       rules: {
         'no-undef': 'off',
       },
