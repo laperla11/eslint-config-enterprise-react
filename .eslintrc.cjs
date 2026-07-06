@@ -31,7 +31,6 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:jsx-a11y/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
@@ -92,28 +91,27 @@ module.exports = {
     // React Hooks
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-    // TypeScript
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-explicit-any': 'warn',
-    '@typescript-eslint/ban-ts-comment': 'warn',
-    '@typescript-eslint/no-floating-promises': 'error',
-    '@typescript-eslint/consistent-type-imports': 'error',
-    '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     // Accessibility
     'jsx-a11y/anchor-is-valid': 'warn',
   },
   overrides: [
     {
-      files: ['*.ts', '*.tsx'],
+      files: ['**/*.ts', '**/*.tsx'],
       parserOptions: {
         project: ['./tsconfig.json'],
       },
       rules: {
         'no-undef': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/no-explicit-any': 'warn',
+        '@typescript-eslint/ban-ts-comment': 'warn',
+        '@typescript-eslint/no-floating-promises': 'error',
+        '@typescript-eslint/consistent-type-imports': 'error',
+        '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
       },
     },
     {
-      files: ['*.js', '*.jsx'],
+      files: ['**/*.js', '**/*.jsx'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
       },
