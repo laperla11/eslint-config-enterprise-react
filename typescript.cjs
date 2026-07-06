@@ -25,7 +25,7 @@ module.exports = {
   // Apply TypeScript-specific, type-aware rules only to TS/TSX files.
   overrides: [
     {
-      files: ['*.ts', '*.tsx'],
+      files: ['**/*.ts', '**/*.tsx'],
       parserOptions: {
         project: './tsconfig.json',
         tsconfigRootDir: __dirname,
