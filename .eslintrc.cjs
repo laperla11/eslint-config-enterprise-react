@@ -69,7 +69,11 @@ module.exports = {
       ],
 
       rules: {
-        '@typescript-eslint/no-unused-vars': 'error',
+        '@typescript-eslint/no-unused-vars': ['error', {      
+    varsIgnorePattern: '^_',
+    argsIgnorePattern: '^_',
+    caughtErrorsIgnorePattern: '^_',
+        }],
         quotes: ['error', 'single'],
         semi: ['error', 'always'],
         'no-multiple-empty-lines': 'error',
